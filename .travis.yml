@@ -13,3 +13,10 @@ after_success:
   - docker build -t hiranokuosaka/multi-nginx ./nginx
   - docker build -t hiranokuosaka/multi-server ./server
   - docker build -t hiranokuosaka/multi-worker ./worker
+  # Log in to the docker CLI
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
+  # Take those images and push them to docker hub
+  - docker push hiranokuosaka/multi-client
+  - docker push hiranokuosaka/multi-nginx
+  - docker push hiranokuosaka/multi-server
+  - docker push hiranokuosaka/multi-worker

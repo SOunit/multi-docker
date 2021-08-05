@@ -6,6 +6,18 @@
       "image": "hiranokuosaka/multi-client",
       "hostname": "client",
       "essential": false
+    },
+    {
+      "name": "server",
+      "image": "hiranokuosaka/multi-server",
+      "hostname": "api",
+      "essential": false
+    },
+    {
+      "name": "worker",
+      "image": "hiranokuosaka/multi-worker",
+      "hostname": "worker",
+      "essential": false
     }
   ]
 }
